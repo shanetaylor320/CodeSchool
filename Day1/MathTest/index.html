@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <div id="app">
+
+        <!-- Title -->
+        <h1>{{ greeting }}</h1>
+        <br>
+
+        <!-- Problem -->
+        <h3>Problem Section:</h3>
+        <p>Problem {{ problem_number }}</p>
+        <p>{{ number_1 }} + {{ number_2 }} = {{ answer }}</p> <br>
+        Guess: <input type="text" v-model="guess"> <br> <br>
+        <button v-on:click="checkAnswer( )">check answer</button>
+        <p>{{ response }}</p>
+        <button v-on:click="nextQuestion( )">next question</button>
+        <br> <br> <br>
+
+        <!-- Results -->
+        <h3>Results Section:</h3>
+        <p>You've gotten {{ number_correct }}/{{ number_correct + number_wrong }} correct.</p>
+
+    </div>
+
+    <!-- Switch script -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="vue.js"></script>
+    <!--  -->
+    <script src="code.js"></script>
+</html>

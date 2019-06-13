@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Day 2 Drills</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<div id="app" v-cloak>
+		<h1>{{ greeting }}</h1>
+
+		<h2>v-for</h2>
+		<ul>
+			<li v-for="(name, index) in names" v-on:click.right="deleteName( index )">{{ name }}</li>
+		</ul>
+		<input type="text" v-model="new_name">
+		<button v-on:click="addName( )">add</button>
+
+		<div class="clear-both"></div>
+		<div class="name" v-for="(item, index) in shopping_list" v-on:click="makeFree( index )">
+			<p>{{ item.name }}</p>
+			<p>${{ item.price }}</p>
+		</div>
+		<div class="clear-both"></div>
+
+		<br><br><br>
+		
+		<h2>v-if & v-for & v-bind</h2>
+		<h3>Hotel Checkout</h3>
+		<ul>
+			<li v-for="item in ameneties" v-if="item != ''">{{ item }}</li>
+		</ul>
+		<p v-if="night_stay != 0">Night Stay: {{ night_stay }}</p>
+		<h4>Select Items Wanted:</h4>
+		Bed Type: 
+		<input type="radio" name="bed" value="king" v-model="ameneties.bed_selected">King
+		<input type="radio" name="bed" value="queen" v-model="ameneties.bed_selected">Queen
+		<input type="radio" name="bed" value="double" v-model="ameneties.bed_selected">Double
+		<br>
+		Bathroom: 
+		<button v-on:click="ameneties.bath = 'bath' ">Bath</button>
+		<button v-on:click="ameneties.shower = 'shower'">Shower</button>
+		<button v-on:click="ameneties.twoBathroom = '2-bathroom'">2-Bathrooms</button><br>
+		Night Stay: 
+		<input type="number" v-model="night_stay">
+		
+		<br><br><br>
+
+		<h2>v-for & v-bind & computed</h2>
+		<h3 v-bind:style="computedStyle">Change my color and size!</h2>
+		<button v-for="color in colors" v-on:click="changeColor( color )">{{ color }}</button><br>
+		<button v-on:click="font_size++">increase</button>
+		<button v-on:click="font_size--">decrease</button>
+
+		<br><br><br>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="code.js"></script>
+</html>
+
+
+<!-- 
+	simple v-for (Alone)
+	add and delete (Together) show how it would be hard to go and find the name, so use (name, index)
+	do second v-for example showing how to use a div with multiple tags (Together)
+	make it free (Alone)
+	add more items to shopping_list (Alone)
+
+
+
+	v-for of buttons (Together)
+	v-bind:style to change the color of the text (Alone)
+	computed style variable with font size (Together)
+	buttons to increase and decrease the font size.
+
+
+ -->
+
+ <!-- var everyone_is_body = this.names.every( function ( name ) {
+	return name == "bob";
+ } ); -->

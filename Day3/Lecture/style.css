@@ -1,0 +1,22 @@
+
+[v-cloak] {
+    display: none;
+}
+
+#app {
+    text-align: center;
+}
+
+p span {
+    cursor: pointer;
+}
+
+p span:hover {
+    color: grey;
+}
+
+.image {
+    width: 300px;
+    height: 300px;
+    /* opacity: .5; */
+}

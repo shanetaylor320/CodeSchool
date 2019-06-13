@@ -1,0 +1,16 @@
+[ v-cloak ] {
+	display: none;
+}
+
+.name {
+	box-sizing: border-box;
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid black;
+	float: left;
+	text-align: center;
+}
+
+.clear-both {
+	clear: both;
+}

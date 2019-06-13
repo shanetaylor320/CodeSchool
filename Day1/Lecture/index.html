@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <div id="app">
+
+        <h1>{{ greet( ) }}</h1>
+        <p>Name: {{ name }}</p>
+        <p>Job: {{ job }}</p>
+        <br>
+
+        Enter a new name: <input v-on:keyup.enter="changeName( )" type="text" v-model="new_name">
+        <button v-on:click="changeName( )" v-on:keydown.enter="changeName( )">change name</button>
+
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="vue.js"></script>
+    <script src="code.js"></script>
+</html>
+
+
+<!-- 
+    Hello World!
+    name and job
+    personalized greeting
+    directives v-
+    two-way binding vs. one-way binding
+    v-model
+    v-on:click
+    MAYBE
+    v-on:keyup.enter
+ -->

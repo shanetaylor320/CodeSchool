@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <div id="app">
+
+        <h1>{{ greeting }}</h1>
+        <br>
+
+        <h3>Section: v-if</h3>
+        <p v-if="seen">Now you see me!</p>
+        <p v-if="seen">currently true</p>
+        <p v-else>currently false</p>
+        <button v-on:click="seen = !seen">toggle</button>
+        <br> <br> <br>
+
+        <h3>Section: computed</h3>
+        <p>{{ number_1 }} + {{ number_2 }} = {{ answer }}</p>
+        <button v-on:click="number_1++">add to number_1</button>
+        <p>Message: {{ message }}</p>
+        <p>Reversed Message: {{ reversedMessage }}</p>
+        <br> <br> <br>
+
+        <h3>Section: v-for</h3>
+        <p>Today we are going to learn:</p>
+        <ol>
+            <li v-for="topic in topics">{{ topic }}</li>
+        </ol>
+        <p>Students:</p>
+        <ul>
+            <li v-for="student in students">
+                <p>Name: {{ student.name }}</p> 
+                <p>Age: {{ student.age }}</p>
+            </li>
+        </ul>
+        <br> <br> 
+
+        <h3>Section: v-bind</h3>
+        <div v-bind:class="{ red: true, bold: true }">red</div>
+        <div v-bind:class="{ red: late, bold: important }" v-on:click="doTask( )">Pay the bills</div>
+
+    </div>
+
+    <!-- Switch script -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="vue.js"></script>
+    <!--  -->
+    <script src="code.js"></script>
+</html>
+
+
+<!-- 
+    welcome message review
+    now you see me example
+    add button to have disappear
+    currently true/false example
+
+    redo the math problem that we did
+    add a button to show how it is ran whenever dependencies change
+    reversed message example (treat like a variable that needs to be )
+
+    today we are going to learn example. use list! show {{ topics }} before continuing.
+    show students example to show how to access multiple variables.
+    IF TIME: Show how to have multiple tags for one v-for
+
+    v-bind red class. SHOW HOW WE DO IT IN THE FIRST PLACE
+    show how you can do two different class on one v-bind with ,
+    late and important example with variables
+    onlick even to show how it is dynamic
+    IF TIME: SHOW HOW TO USE WITH STYLE
+
+    
+ -->

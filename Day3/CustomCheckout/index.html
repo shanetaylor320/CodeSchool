@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <div id="app" class="border">
+
+        <h1>{{ greeting }}</h1>
+
+        <div class="border-bottom">
+            <p>Pick a deck:</p>
+            <img v-bind:src="computedDeckImage" class="image"> <br>
+            <input type="radio" value="pine" v-model="deck_type" > pine 
+            <input type="radio" value="oak" v-model="deck_type" > oak 
+            <input type="radio" value="tree" v-model="deck_type" > tree 
+        </div>
+
+        <div class="border-bottom">
+            <p>Pick your wheels:</p>
+            <img v-bind:src="computedWheelImage" class="image"> <br>
+            <input type="radio" value="white" v-model="wheel_color" > white 
+            <input type="radio" value="green" v-model="wheel_color" > green 
+            <input type="radio" value="red" v-model="wheel_color" > red 
+        </div>
+
+        <div class="border-bottom">
+            <p>Pick your design:</p>
+            <img v-bind:src="computedDesignImage" class="image tall"> <br>
+            <input type="radio" value="option1" v-model="design" > 1 
+            <input type="radio" value="option2" v-model="design" > 2 
+            <input type="radio" value="option3" v-model="design" > 3 
+            <input type="radio" value="option4" v-model="design" > 4 
+        </div>     
+        
+        <div class="border-bottom">
+            <p>Other options:</p>
+            <input type="checkbox" value="smooth_riding" v-model="other_options" > Smooth Riding
+            <input type="checkbox" value="traction_control" v-model="other_options" > Traction Control <br>
+            <input type="checkbox" value="stickers" v-model="other_options" > Stickers 
+            <input type="checkbox" value="insurance" v-model="other_options" > Insurance
+        </div>  
+
+        <div>
+            Cost: ${{ computedCost }} <br>
+            Tax: ${{ computedTax }} <br>
+            Total Cost: ${{ computedTotalCost }}
+        </div>
+
+    </div>
+
+    <!-- Switch script -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="vue.js"></script>
+    <!--  -->
+    <script src="code.js"></script>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Day 3 Drills</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<div id="app" v-cloak>
+		<h1>{{ greeting }}</h1>
+
+		<h2>Section: computed</h2>
+
+		<h3>Rolling Dice</h3>
+		<ul>
+			<li v-for="roll in dice_rolls">{{ roll }}</li>
+		</ul>
+		<button v-on:click="rollDice( )">reroll</button>
+		<p>Ability Score: {{ rolledScore }}</p>
+
+		<br>
+
+		<h3>Calculating values from a list</h3>
+		<ul>
+			<li v-for="number in numbers">{{ number }}</li>
+		</ul>
+		<button v-on:click="generateNumbers( )">regenerate numbers</button>
+		<p>Sum: {{ computedSum }}</p>
+		<p>Average: {{ computedAverage }}</p>
+		<p>Min: {{ computedMin }}</p>
+		<p>Max: {{ computedMax }}</p>
+
+		<br><br><br>
+
+		<h2>Section: v-bind</h2>
+
+		<h3>Changing text color a slightly different way</h3>
+		<p v-bind:style="computedColor">Change my color!</p>
+		<button v-for="color in colors" v-on:click="current_color = color.color_value">{{ color.display_name }}</button><br>
+
+		<br>
+
+		<h3>Image source</h3>
+		<p>Click me!</p>
+		<!-- Images: google happy emoji or sad emoji, images, emojiisland.com has good quality ones, should be first result -->
+		<img v-bind:src="computedEmotion" v-on:click="changeEmotion( )">
+
+		<br><br><br>
+
+		<h2>Section: v-model</h2>
+
+		<h3>Checkboxes</h3>
+		<p>A list of names that rhyme: {{ names_that_rhyme.join( ", " ) }}</p>
+		<label v-for="name in names">
+			<input 
+				type="checkbox" 
+				v-bind:value="name"
+				v-model="names_that_rhyme">
+			{{ name }}
+		</label><br>
+
+		<br>
+
+		<h3>Radio buttons</h3>
+		<p>Can pigs fly? {{ pigs_fly }}</p>
+		<label v-for="option in options">
+			<input
+				type="radio"
+				v-bind:value="option"
+				v-model="pigs_fly">
+			{{ option }}
+		</label><br>
+
+		<br><br><br>
+
+		<h2>Section: v-for</h2>
+
+		<h3>Doing something a set number of times</h3>
+		<p>
+			<span v-for="i in 10">Bob </span>
+		</p>
+
+		<h3>Doing something a set number of times based on a data variable</h3>
+		<p>
+			<span v-for="i in repeat">Samantha </span>
+		</p>
+		<button v-on:click="repeat++">more</button>
+		<button v-on:click="repeat--">less</button><br>
+
+		<br><br><br>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="code.js"></script>
+</html>

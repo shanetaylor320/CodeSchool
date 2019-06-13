@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <div id="app" v-cloak>
+
+        <h1>{{ greeting }}</h1>
+        <p>
+            <span v-on:click="page = 'computed'">computed</span> |
+            <span v-on:click="page = 'v-bind'">v-bind</span> |
+            <span v-on:click="page = 'v-model'">v-model</span>
+        </p>
+
+        <div v-if="page == 'computed'">
+            <h3>Number Computed Example:</h3>
+            <p>{{ number_1 }} {{ number_2 }} {{ number_3 }}</p>
+            <button v-on:click="number_1++">add to number_1</button>
+            <button v-on:click="number_2++">add to number_2</button>
+            <button v-on:click="number_3++">add to number_3</button> <br>
+            <p v-if="ten">You've reached 10!</p>
+
+            <h3>Bob Example:</h3>
+            <p v-for="(person, index) in persons" v-on:click="becomeBob( index )">{{ person.name }}</p>
+            <p>--------------------------</p>
+            <p v-if="no_bobs">None are Bob</p>
+            <p v-if="some_bobs">Some are Bob</p>
+            <p v-if="all_bobs">All are Bob</p>
+        </div>
+
+        <div v-if="page == 'v-bind'">
+            <img v-bind:src="computedImage" class="image" v-bind:style="{ opacity: image_opacity }"> <br>
+            <button v-on:click="image = 'rainforest'">rainforest</button>
+            <button v-on:click="image = 'ocean'">ocean</button>
+            <p>opacity</p>
+            <input 
+                type="range" 
+                v-model="image_opacity" 
+                min="0" 
+                max="1"
+                step=".01" > <br>
+        </div>
+
+        <div v-if="page == 'v-model'">
+            <h3>Hotel Checkout</h3>
+            Bed Size:
+            <input type="radio" value="King" v-model="bed_size" > King
+            <input type="radio" value="Queen" v-model="bed_size" > Queen
+            <input type="radio" value="Double" v-model="bed_size" > Double <br>
+            Ameneties:
+            <input type="checkbox" value="Bath" v-model="ameneties" > Bath
+            <input type="checkbox" value="2 Bathrooms" v-model="ameneties" > 2 Bathrooms
+            <input type="checkbox" value="Porch" v-model="ameneties" > Porch
+            <input type="checkbox" value="Gym Access" v-model="ameneties" > Gym Access <br> <br>
+            Cost: {{ computedCost }} <br>
+            <button v-if="bed_size != ''" v-on:click="alert('Finished')">Checkout</button>
+        </div>
+
+        <!-- AFTER DON'T FORGET TO DO V-CLOAK!!! And Created!! and Lifecycle events -->
+
+    </div>
+
+    <!-- Switch script -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- <script src="vue.js"></script> -->
+    <!--  -->
+    <script src="code.js"></script>
+</html>

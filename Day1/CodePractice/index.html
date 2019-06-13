@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <div id="app">
+
+        <h1>Good {{ time_of_day }}!</h1>
+        <p>Created by: {{ name }}</p>
+        <p>Year: {{ year }}</p>
+        <br>
+        
+        <h3>Number Changer:</h3>
+        <button v-on:click="generateRandomNumber( )">generate</button> 
+        <br>
+        <p>{{ number }}</p>
+        <button v-on:click="increment( 1 )">increment 1</button>
+        <button v-on:click="decrement( 1 )">decrement 1</button>
+        <button v-on:dblclick="increment( 5 )">increment 5</button>
+        <button v-on:dblclick="decrement( 5 )">decrement 5</button>
+        <br> <br>
+
+        <h3>Word Reverser:</h3>
+        <input type="text" v-model="word">
+        <button v-on:click="reverse( )">reverse</button>
+        <br>
+        <p>{{ word }}</p>
+        <br>
+
+        <h3>Change Time of Day:</h3>
+        <button v-on:click="changeTime( )">change time</button>
+
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="vue.js"></script>
+    <script src="code.js"></script>
+</html>
+
+<!-- 
+    Greeting for time of day (Together)
+    Created by and year (Alone)
+    Button to show random number (Together)
+    Button to increment and button to decrement number (Alone)
+    Button +-5 double click (Together)
+    Title for v-model section (Together)
+    Reverse v-model (Alone)
+    Reverse buttton method (Together)
+    Change time of day button (Alone)
+ -->
