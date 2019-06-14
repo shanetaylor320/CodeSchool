@@ -26,15 +26,6 @@ var app = new Vue ( {
         },
         askQuestion: function ( ) {
             //
-            // FETCH
-            //
-            // fetch( "https://magic-eight-ball-16.herokuapp.com/" ).then( function ( response ) {
-            //     response.json( ).then( function ( magic_answer ) {
-            //         app.answer = magic_answer.message;
-            //     } );
-            // } );
-
-            //
             // Random from list
             //
             var possible_answers = [ "yes", "no", "maybe", "perhaps someday", "definitely not" ];
