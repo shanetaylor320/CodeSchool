@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Day 3 Drills</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<div id="app" v-cloak>
+		<h1>{{ greeting }}</h1>
+
+		<div v-on:click="click( )"
+			v-on:mouseover="mouseOver( )"
+			v-on:mouseleave="mouseLeave( )"
+			v-bind:class="clickedClass">
+			<p>I have been clicked: {{ clicked }}</p>
+		</div>
+
+		<div v-bind:class="positionClass"
+			v-on:click="swapPosition( )"> 
+			<!-- the onclick is not needed, more just for texting the v-bind initially before adding the keyboard events -->
+			<p>Now, I am on the {{ position }}</p>
+		</div>
+
+		<div class="board">
+			<div class="piece" v-bind:style="pieceStyle">
+			</div>
+			<div class="goal" v-bind:style="goalStyle">
+			</div>
+		</div>
+
+		<h1 v-if="victory" id="win">YOU WIN!!</h1>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="code.js"></script>
+</html>
+
+<!-- 
+	push r to make red and i to make italicized
+	small game
+ -->
