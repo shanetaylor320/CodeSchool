@@ -8,16 +8,24 @@
         <h1>Todo App</h1>
 
         <div>
-            <input type="text" v-model="new_todo" placeholder="edit me">
-            <button v-if="editing" v-on:click="saveTodo( )">save</button>
-            <button v-else v-on:click="addTodo( )">add</button>
+            <input type="text" v-model="new_todo" placeholder="add todo">
+            <button v-on:click="addTodo( )">add</button>
         </div>
 
         <ul id="todos">
             <li class="todo" v-for="(todo, index) in todos">
                 <input type="checkbox" v-model="todo.completed">
-                <p v-bind:class="{ completed: todo.completed }">{{ todo.name }}</p>
-                <button v-on:click="editTodo( todo )">edit</button>
+                <p 
+                    v-bind:class="{ completed: todo.completed }"
+                    v-on:dblclick="todo.editing = true"
+                    v-if="!todo.editing">
+                    {{ todo.name }}
+                </p>
+                <input 
+                    type="text"
+                    v-if="todo.editing"
+                    v-model="todo.name"
+                    v-on:keyup.enter="todo.editing = false" >
                 <button v-on:click="deleteTodo( index )">delete</button>
             </li>
         </ul>
